@@ -1,0 +1,67 @@
+# Mongo DB in docker
+
+mongosh 
+show dbs
+docker exec -it 9d419a678fb4 bash/sh/zsh/powershell
+docker pull mongo
+
+# Exec in docker
+## Docker required Base Image in Dockerfile which start from
+
+https://dl-cdn.alpinelinux.org/alpine/v3.6/main
+
+https://dl-cdn.alpinelinux.org/alpine/v3.6/community
+
+docker build -t manish/nodeapp
+
+docker run -p 8000:8000 manish/nodeapp
+
+#Dockerfile
+
+FROM node:alpine
+
+WORKDIR	 /usr/nodeapp
+
+COPY ./package.json ./
+
+RUN npm install
+COPY ./ ./
+
+CMD ["npm", "start"]
+
+
+#multicontainer setup of docker
+
+docker-compose up build
+
+
+
+#Node commands
+npm -v
+npm init -y
+npm install express
+npm install mongoose
+
+
+# Docker play lab
+git clone
+cd /dir
+docker build -t demo:lts
+docker run -p 8080:8080 -e PORT=8080 demo:lts
+docker build -t test_image1 --build-arg TEST1=new_value .
+
+docker container ls -a
+docker logs
+
+# To play the docker instantly
+git clone -b https://github.com/manish7065/sensor_fault.git  # clone the repo
+cd sensor_fault  #select the downloaded directory                                        
+docker build -t demo:lts . # Docker File should be in the folder you can check it by 
+docker run -p 8080:8080 -e PORT=8080 <Image Name>/<Image ID>
+docker run -e <key>=<value> <image_name> # To setup env variable in existing image
+docker run -e MONGO_DB_URL="mongodb+srv://trialmongo:version2022@cluster0.2gugo3n.mongodb.net/test" <image_name>
+docker run -p 8080:8080 -e PORT=8080 -e APP_ENV=production -e VAR1=value1 -e VAR2=value2 <image_name>
+docker run -p 8080:8080 -e PORT=8080 -e MONGO_DB_URL="mongodb+srv://trialmongo:version2022@cluster0.2gugo3n.mongodb.net/test" <image_name>
+docker exec -it <Image_Name/ID> bash  #To look into docker file 
+
+ssh ip172-18-0-41-cf5bjln91rrg00avsvm0@direct.labs.play-with-docker.com
