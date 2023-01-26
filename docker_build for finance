@@ -1,0 +1,11 @@
+
+git clone https://github.com/Machine-Learning-01/finance-complaint.git
+docker build -t fc:lts .
+docker run -it -v $(pwd)/finance_artifact:/app/finance_artifact  --env-file=$(pwd)/.env fc:lts  # to define the volume for artifact in docker
+docker-compose up
+pip freeze > requirements.txt
+cat requirements.txt | xargs pip uninstall -y
+python -m venv myenv
+myenv\Scripts\activate # windows
+source myenv/bin/activate # linux
+
