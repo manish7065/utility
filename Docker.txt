@@ -65,3 +65,31 @@ docker run -p 8080:8080 -e PORT=8080 -e MONGO_DB_URL="mongodb+srv://trialmongo:v
 docker exec -it <Image_Name/ID> bash  #To look into docker file 
 
 ssh ip172-18-0-41-cf5bjln91rrg00avsvm0@direct.labs.play-with-docker.com
+
+
+#Docker Management Commands
+docker version: displays the Docker version information.
+docker info: displays the Docker system information.
+docker ps: lists all running containers.
+docker ps -a: lists all containers, including those that have exited.
+docker images: lists all images on the local machine.
+docker search <image_name>: searches the Docker Hub for images with the specified name.
+docker pull <image_name>: downloads an image from the Docker Hub.
+docker push <image_name>: uploads an image to the Docker Hub.
+docker login: logs in to the Docker Hub.
+Container Management Commands
+docker run <image_name>: creates and starts a new container from the specified image.
+docker start <container_id>: starts a stopped container.
+docker stop <container_id>: stops a running container.
+docker restart <container_id>: restarts a container.
+docker rm <container_id>: removes a container.
+docker exec -it <container_id> <command>: runs a command in a running container.
+docker logs <container_id>: displays the logs of a container.
+Image Management Commands
+docker build <path/to/dockerfile> -t <image_name>: builds a Docker image from a Dockerfile.
+docker rmi <image_id>: removes an image.
+docker tag <source_image> <target_image>: creates a new tag for an image.
+Docker Compose Commands
+docker-compose up: starts all services defined in the docker-compose.yml file.
+docker-compose down: stops and removes all containers, networks, and volumes created by docker-compose up.
+docker-compose ps: lists all running containers for the services defined in the docker-compose.yml file.
